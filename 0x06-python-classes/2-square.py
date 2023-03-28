@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Square class that defines a square and checks for errors"""
 
+
 class Square:
     """__init__ - initialize a square class
     Args:
