@@ -1,17 +1,12 @@
 #!/usr/bin/python3
+'''Module for add_attribute method.'''
 
 
-def add_attribute(obj, attr, value):
-    """Defines function to check whether object supports dynamic assigment.
-    Args:
-        obj: object to check/assign to
-        attr (str): name of attribute to assign to `obj`
-        value: value to be associated with `name`
-    Raises:
-        TypeError: If `obj` does not support dynamic assignment
-    """
-    if not isinstance(attr, str) or \
-       hasattr(obj, attr) or not\
-       hasattr(obj, "__setattr__"):
+def add_attribute(obj, name, value):
+    '''Method that tests if it can and sets an attribute.'''
+    if hasattr(obj, "__dict__") or \
+       (hasattr(obj, "__slots__") and name in obj.__slots__):
+        setattr(obj, name, value)
+    else:
         raise TypeError("can't add new attribute")
-    setattr(obj, attr, value)
+Footer
