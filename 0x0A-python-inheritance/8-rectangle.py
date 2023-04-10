@@ -1,16 +1,12 @@
 #!/usr/bin/python3
-"""Module to implement Rectangle class, extending BaseGeometry"""
+'''Module for Rectangle class.'''
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """Class to represent a rectangle"""
+    '''A subclass representing a rectangle.'''
     def __init__(self, width, height):
-        """Initialize a new rectangle
-        Args:
-            width (int): width of rectangle
-            height (int): height of rectangle
-        """
+        '''Constructor.'''
         self.integer_validator("width", width)
         self.integer_validator("height", height)
         self.__width = width
