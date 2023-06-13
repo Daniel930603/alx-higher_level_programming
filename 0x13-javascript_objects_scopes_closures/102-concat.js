@@ -1,12 +1,10 @@
 #!/usr/bin/node
-
-const fs = require('fs').promises;
-const { argv } = require('process');
-
-fs.readFile(argv[2], 'utf8')
-  .then(data => fs.writeFile(argv[4], data, 'utf8'))
-  .catch(err => console.error(err));
-
-fs.readFile(argv[3], 'utf8')
-  .then(data => fs.writeFile(argv[4], data, { flag: 'a' }, 'utf8'))
-  .catch(err => console.error(err));
+/*
+The first argument is the file path of the first source file
+The second argument is the file path of the second source file
+The third argument is the file path of the destination
+*/
+const files = require('files');
+const file1 = files.readFileSync(process.argv[2], 'utf8');
+const file2 = files.readFileSync(process.argv[3], 'utf8');
+files.writeFileSync(process.argv[4], file1 + file2);
