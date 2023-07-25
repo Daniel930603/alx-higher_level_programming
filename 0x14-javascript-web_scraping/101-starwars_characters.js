@@ -30,7 +30,6 @@ function printMovieCharacters (movieId) {
       for (let i = 0; i < characters.length; ++i) {
         promises.push(getDataFrom(characters[i]));
       }
-
       Promise.all(promises)
         .then((results) => {
           for (let i = 0; i < results.length; ++i) {
